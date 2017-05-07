@@ -1,0 +1,12 @@
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\bin\Debug\RLC_Circuit.exe.config
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\bin\Debug\RLC_Circuit.exe
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\bin\Debug\RLC_Circuit.pdb
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.csprojResolveAssemblyReference.cache
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form1.resources
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Properties.Resources.resources
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.csproj.GenerateResource.Cache
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.exe
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.pdb
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Circuit.resources
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Element_Parameters.resources
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Power_Parameters.resources
