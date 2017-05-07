@@ -8,8 +8,9 @@ namespace RLC_Circuit
 {
     public partial class Element
     {
-        Complex Resistance;
+        Complex Resistance = new Complex();
 
+        int elementType = 0;
         double ActiveResistance;
         double Inductance;
         double Capacity;
@@ -17,16 +18,19 @@ namespace RLC_Circuit
         public Element()
         {
             this.Resistance = new Complex();
+            this.elementType = 0;
         }
 
         public Element(Complex z)
         {
             this.Resistance = new Complex(z.Real(), z.Imaginary());
+            this.elementType = 0;
         }
 
         //ElementType:  1 - if Resistor; 2 - if Inductor; 3 - if Capacitor
         public Element(int ElementType, double value, double w)  
         {
+            this.elementType = ElementType;
             switch (ElementType)
             {
                 case 1:
@@ -46,15 +50,19 @@ namespace RLC_Circuit
 
         public void setValue(int ElementType, double value)
         {
+            this.elementType = ElementType;
             switch (ElementType)
             {
                 case 1:
+                    this.Resistance = new Complex();
                     this.ActiveResistance = value;
                     break;
                 case 2:
+                    this.Resistance = new Complex();
                     this.Inductance = value;
                     break;
                 case 3:
+                    this.Resistance = new Complex();
                     this.Capacity = value;
                     break;
             }
@@ -62,6 +70,7 @@ namespace RLC_Circuit
 
         public void setResistance(double w, int ElementType)
         {
+            this.elementType = ElementType;
             switch (ElementType)
             {
                 case 1:
@@ -84,6 +93,11 @@ namespace RLC_Circuit
         public Complex getResistance()
         {
             return this.Resistance;
+        }
+
+        public int getType()
+        {
+            return this.elementType;
         }
 
         public double getActiveResistance()

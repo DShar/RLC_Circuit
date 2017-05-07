@@ -10,3 +10,4 @@ c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circui
 c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Circuit.resources
 c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Element_Parameters.resources
 c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Form_Power_Parameters.resources
+c:\users\дарья\documents\visual studio 2015\Projects\RLC_Circuit\RLC_Circuit\obj\Debug\RLC_Circuit.Results.resources

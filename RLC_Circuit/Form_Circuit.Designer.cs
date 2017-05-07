@@ -211,6 +211,7 @@
             this.расчитатьТокиToolStripMenuItem.Name = "расчитатьТокиToolStripMenuItem";
             this.расчитатьТокиToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.расчитатьТокиToolStripMenuItem.Text = "Расчитать токи";
+            this.расчитатьТокиToolStripMenuItem.Click += new System.EventHandler(this.расчитатьТокиToolStripMenuItem_Click);
             // 
             // справкаToolStripMenuItem
             // 
@@ -415,7 +416,7 @@
             this.label_elementPower.AutoSize = true;
             this.label_elementPower.BackColor = System.Drawing.Color.White;
             this.label_elementPower.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_elementPower.Location = new System.Drawing.Point(106, 265);
+            this.label_elementPower.Location = new System.Drawing.Point(64, 198);
             this.label_elementPower.Name = "label_elementPower";
             this.label_elementPower.Size = new System.Drawing.Size(0, 20);
             this.label_elementPower.TabIndex = 47;

@@ -27,14 +27,29 @@ namespace RLC_Circuit
             this.Phase = p;
         }
 
+        public void setAmplitude(double amp)
+        {
+            this.Amplitude = amp;
+        }
+
         public double getAmplitude()
         {
             return this.Amplitude;
         }
 
+        public void setFrequency(double f)
+        {
+            this.w = 2 * f * System.Math.PI;
+        }
+
         public double W()
         {
             return this.w;
+        }
+
+        public void setPhase(double ph)
+        {
+            this.Phase = ph;
         }
 
         public double getPhase()

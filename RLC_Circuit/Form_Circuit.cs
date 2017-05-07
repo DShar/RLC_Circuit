@@ -21,6 +21,10 @@ namespace RLC_Circuit
 
         public Label[] parameters_labels = new Label[9];
 
+        //Установлены ли параметры элементов
+        public bool[] isElementSet = new bool[8];
+        public bool isPowerSet = false;
+
         public Circuit circuit = new Circuit();
 
         public LinkedList<Single_Element> selected_elements = new LinkedList<Single_Element>();
@@ -51,6 +55,11 @@ namespace RLC_Circuit
             parameters_labels[6] = this.label_element7;
             parameters_labels[7] = this.label_element8;
             parameters_labels[8] = this.label_elementPower;
+
+            for(int i=0; i<8; i++)
+            {
+                isElementSet[i] = false;
+            }
         }
 
         private void comboBox_element1_SelectedIndexChanged(object sender, EventArgs e)
@@ -1529,6 +1538,55 @@ namespace RLC_Circuit
             Form_Power_Parameters fparam = new Form_Power_Parameters();
             fparam.Owner = this;
             fparam.Show();
+        }
+
+        private void расчитатьТокиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool isSet = false;
+            for (int i = 0; i < 8; i++)
+            {
+                if (!isElementSet[i])
+                {
+                    isSet = false;
+                    MessageBox.Show("Set parameters of element № " + (++i));
+                    break;
+                }
+                else
+                {
+                    isSet = true;
+                }
+            }
+
+            if (!isPowerSet)
+            {
+                MessageBox.Show("Set voltage, please! ");
+            }
+            else
+            {
+                if (selected_elements.Count != 8)
+                {
+                    MessageBox.Show("Установите все элементы!", "Установка параметров", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    if(isSet)
+                    {
+                        //Установка сопроивлений элементам
+                        for(int i=0;i<8;i++)
+                        {
+                           // MessageBox.Show("W = " + circuit.getVoltage().W());
+                            circuit.elements[i].setResistance(circuit.getVoltage().W(), circuit.elements[i].getType());
+                            //MessageBox.Show("Resistance № "+(i+1)+" = " + circuit.elements[i].getResistance().ToString());
+                        }
+
+                        Results fresults = new Results(this.circuit);
+                        fresults.Owner = this;
+                        fresults.Show();
+                    }  
+                }
+                
+            }
+                        
         }
     }
 }

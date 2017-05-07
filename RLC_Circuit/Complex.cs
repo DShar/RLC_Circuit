@@ -90,7 +90,7 @@ namespace RLC_Circuit
 
         public override string ToString()
         {
-            return this.Re.ToString() + (this.Im < 0 ? " - " : " + ") + this.Im.ToString() + 'i';
+            return this.Re.ToString() + (this.Im < 0 ? " " : " + ") + this.Im.ToString() + 'i';
         }
     }
 }

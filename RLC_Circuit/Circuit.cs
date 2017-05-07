@@ -32,7 +32,15 @@ namespace RLC_Circuit
 
         }
 
+        public void setVoltage(Power vol)
+        {
+            this.E = vol;
+        }
 
+        public Power getVoltage()
+        {
+            return this.E;
+        }
 
     }
 }

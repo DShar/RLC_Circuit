@@ -55,6 +55,7 @@ namespace RLC_Circuit
                         if (textBox1.Text != "")
                         {
                             mainForm.circuit.elements[element_number - 1].setValue(1,Double.Parse(textBox1.Text));
+                            mainForm.isElementSet[element_number - 1] = true;
                             isCorrect = true;
                             if (Double.Parse(textBox1.Text) > 100)
                             {
@@ -64,12 +65,25 @@ namespace RLC_Circuit
                             {
                                 isTooBig = false;
                             }
+                            if(Double.Parse(textBox1.Text) < 0)
+                            {
+                                isCorrect = false;
+                            }
+                            else
+                            {
+                                isCorrect = true;
+                            }
+                        }
+                        else
+                        {
+                            isCorrect = false;
                         }
                         break;
                     case 2:
                         if (textBox1.Text != "")
                         {
                             mainForm.circuit.elements[element_number - 1].setValue(2, Double.Parse(textBox1.Text));
+                            mainForm.isElementSet[element_number - 1] = true;
                             isCorrect = true;
                             if (Double.Parse(textBox1.Text) > 1)
                             {
@@ -79,12 +93,25 @@ namespace RLC_Circuit
                             {
                                 isTooBig = false;
                             }
+                            if (Double.Parse(textBox1.Text) < 0)
+                            {
+                                isCorrect = false;
+                            }
+                            else
+                            {
+                                isCorrect = true;
+                            }
+                        }
+                        else
+                        {
+                            isCorrect = false;
                         }
                         break;
                     case 3:
                         if (textBox1.Text != "")
                         {
                             mainForm.circuit.elements[element_number - 1].setValue(3, Double.Parse(textBox1.Text));
+                            mainForm.isElementSet[element_number - 1] = true;
                             isCorrect = true;
                             if (Double.Parse(textBox1.Text) > 1)
                             {
@@ -94,6 +121,18 @@ namespace RLC_Circuit
                             {
                                 isTooBig = false;
                             }
+                            if (Double.Parse(textBox1.Text) < 0)
+                            {
+                                isCorrect = false;
+                            }
+                            else
+                            {
+                                isCorrect = true;
+                            }
+                        }
+                        else
+                        {
+                            isCorrect = false;
                         }
                         break;
                 }
@@ -135,7 +174,7 @@ namespace RLC_Circuit
                 }
                 else
                 {
-                    MessageBox.Show("Incorrect data! Please enter a number!");
+                    MessageBox.Show("Incorrect data!");
                 }
             }
 
