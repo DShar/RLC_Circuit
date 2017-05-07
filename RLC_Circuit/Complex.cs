@@ -44,6 +44,13 @@ namespace RLC_Circuit
             sum.Im = a.Im + b.Im;
             return (sum);
         }
+        public static Complex Sum(Complex a, Complex b, Complex c)
+        {
+            Complex sum = new Complex();
+            sum.Re = a.Re + b.Re + c.Re;
+            sum.Im = a.Im + b.Im + c.Im;
+            return (sum);
+        }
 
         public static Complex Subtruct(Complex a, Complex b)
         {
@@ -63,14 +70,14 @@ namespace RLC_Circuit
 
         public static double SqrAbs(Complex a)
         {
-            double sAbs = 0;
+            double sAbs;
             sAbs = a.Re * a.Re + a.Im * a.Im;
             return (sAbs);
         }
 
         public static double Abs(Complex a)
         {
-            double abs = 0;
+            double abs;
             abs = System.Math.Sqrt(Complex.SqrAbs(a));
             return (abs);
         }

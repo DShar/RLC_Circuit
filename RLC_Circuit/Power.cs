@@ -61,7 +61,14 @@ namespace RLC_Circuit
         {
             if(this.Phase!=0)
             {
-                return this.Amplitude.ToString() + "sin(" + this.w.ToString() + "t + " + this.Phase.ToString() + ")";
+                if(this.Phase>0)
+                {
+                    return this.Amplitude.ToString() + "sin(" + this.w.ToString() + "t + " + this.Phase.ToString() + ")";
+                }
+                else
+                {
+                    return this.Amplitude.ToString() + "sin(" + this.w.ToString() + "t " + this.Phase.ToString() + ")";
+                }       
             }
             else
             {

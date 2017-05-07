@@ -38,18 +38,58 @@ namespace RLC_Circuit
             this.Circuit.setVoltage(circuit.getVoltage());
             this.label_Power.Text = "E = " + this.Circuit.getVoltage().ToString();
 
-            //this.WriteResults();
-           // this.Circuit = circuit;
+            this.WriteResults();
         }
 
         public void WriteResults()
-        {
-            
+        { 
+            //Эквивалентное сопротивление 1
+            this.Circuit.Resistance1 = ((Complex.Sum(this.Circuit.elements[0].getResistance(), this.Circuit.elements[1].getResistance()))
+                * this.Circuit.elements[2].getResistance()) / 
+                (Complex.Sum(this.Circuit.elements[0].getResistance(), this.Circuit.elements[1].getResistance(), this.Circuit.elements[2].getResistance()));
+
+            //Эквивалентное сопротивление 2
+            this.Circuit.Resistance2 = ((this.Circuit.elements[3].getResistance() * this.Circuit.elements[4].getResistance()) /
+               ( this.Circuit.elements[3].getResistance() + this.Circuit.elements[4].getResistance()));
+
+            //Эквивалентное сопротивление 3
+            this.Circuit.Resistance3 = ((this.Circuit.elements[6].getResistance() + this.Circuit.elements[7].getResistance()) * this.Circuit.elements[5].getResistance()) /
+                (this.Circuit.elements[6].getResistance() + this.Circuit.elements[7].getResistance() + this.Circuit.elements[5].getResistance());
+
+
+            this.label1.Text = "Resistance1 = " + this.Circuit.Resistance1.ToString();
+            this.label2.Text = "Resistance2 = " + this.Circuit.Resistance2.ToString();
+            this.label3.Text = "Resistance3 = " + this.Circuit.Resistance3.ToString();
+
+            //Расчёт амплитуды контурных токов
+            //I(I)max = E / Zэкв  Zэкв - tempResistance1
+            //I(II)max = E / Zдел Zдел - tempResistance2
+
+            Complex tempResistance1 = new Complex();
+            tempResistance1 = this.Circuit.Resistance3 + this.Circuit.Resistance1 +
+                ((this.Circuit.Resistance1 * this.Circuit.Resistance3) / this.Circuit.Resistance2);
+
+            Complex tempResistance2 = new Complex();
+            Complex Constant1 = new Complex(1, 0);  // 1 в виде комплексного числа (1+0i)
+            tempResistance2 = (this.Circuit.Resistance1 + this.Circuit.Resistance2) / (Constant1 + (this.Circuit.Resistance2 / tempResistance1));
+            //this.label5.Text = "Zэкв = " + tempResistance1.ToString();
+
+            double Emax = this.Circuit.getVoltage().getAmplitude();
+
+            //Ток вo 2 контуре
+            this.Circuit.I3 = new Power(Emax/Complex.Abs(tempResistance1),this.Circuit.getVoltage().W()/(2*System.Math.PI),this.Circuit.getVoltage().getPhase()+System.Math.Atan2(tempResistance1.Imaginary(),tempResistance1.Real()));
+            this.label4.Text = "I3 = " + this.Circuit.I3.ToString();
+
+            //Ток в первом контуре
+            this.Circuit.I1 = new Power(Emax / Complex.Abs(tempResistance2), this.Circuit.getVoltage().W() / (2 * System.Math.PI), this.Circuit.getVoltage().getPhase() + System.Math.Atan2(tempResistance2.Imaginary(), tempResistance2.Real()));
+            this.label5.Text = "I1 = " + this.Circuit.I1.ToString();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
     }
 }
