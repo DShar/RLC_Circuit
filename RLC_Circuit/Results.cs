@@ -32,11 +32,11 @@ namespace RLC_Circuit
             for (int i = 0; i < 8; i++)
             {
                 this.Circuit.elements[i] = new Element(circuit.elements[i].getResistance());
-                this.results_labels[i].Text = this.Circuit.elements[i].getResistance().ToString();
+                this.results_labels[i].Text = "X" + (i + 1) + " = " + this.Circuit.elements[i].getResistance().ToString();
             }
 
             this.Circuit.setVoltage(circuit.getVoltage());
-            MessageBox.Show("E = " + this.Circuit.getVoltage().ToString());
+            this.label_Power.Text = "E = " + this.Circuit.getVoltage().ToString();
 
             //this.WriteResults();
            // this.Circuit = circuit;
@@ -44,10 +44,7 @@ namespace RLC_Circuit
 
         public void WriteResults()
         {
-            for(int i=0;i<8;i++)
-            {
-                this.results_labels[i].Text = "X" + (i + 1) + " = " + this.Circuit.elements[i].getResistance().ToString();
-            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -37,6 +37,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label_Power = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -129,11 +130,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label_Power
+            // 
+            this.label_Power.AutoSize = true;
+            this.label_Power.Location = new System.Drawing.Point(85, 13);
+            this.label_Power.Name = "label_Power";
+            this.label_Power.Size = new System.Drawing.Size(45, 19);
+            this.label_Power.TabIndex = 9;
+            this.label_Power.Text = "Power";
+            // 
             // Results
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(433, 377);
+            this.Controls.Add(this.label_Power);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -144,7 +155,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Results";
             this.Text = "Results";
             this.ResumeLayout(false);
@@ -163,5 +174,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label_Power;
     }
 }
